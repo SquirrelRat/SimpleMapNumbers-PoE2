@@ -10,6 +10,9 @@ namespace SimpleMapNumbers
     {
         public ToggleNode Enable { get; set; } = new ToggleNode(true);
 
+        [Menu("Show Numbers")]
+        public ToggleNode ShowNumbers { get; set; } = new ToggleNode(true);
+
         [Menu("Tier 1-5 Color")]
         public ColorNode Tier1To5Color { get; set; } = new ColorNode(Color.White);
 
@@ -19,7 +22,9 @@ namespace SimpleMapNumbers
         [Menu("Tier 11-16 Color")]
         public ColorNode Tier11To16Color { get; set; } = new ColorNode(Color.Red);
 
+		[Menu("Draw Rarity Frame")]
         public ToggleNode DrawFrame { get; set; } = new ToggleNode(true);
+		
         public RangeNode<int> FrameBorderSize { get; set; } = new RangeNode<int>(1, 1, 10);
         public ColorNode TextBackgroundColor { get; set; } = new ColorNode(Color.Black);
         public RangeNode<float> TextScale { get; set; } = new RangeNode<float>(1.3f, 1.0f, 2.0f);

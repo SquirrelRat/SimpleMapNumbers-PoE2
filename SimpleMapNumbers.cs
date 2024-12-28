@@ -93,15 +93,20 @@ namespace SimpleMapNumbers
                             break;
                     }
 
+                    // Draw the frame if enabled
                     if (Settings.DrawFrame)
                     {
                         Graphics.DrawFrame(itemRect, frameColor, Settings.FrameBorderSize);
                     }
 
-                    using (Graphics.SetTextScale(Settings.TextScale.Value))
+                    // Draw the numbers if enabled
+                    if (Settings.ShowNumbers)
                     {
-                        var topLeft = new Vector2(itemRect.TopLeft.X + 2, itemRect.TopLeft.Y + 2);
-                        Graphics.DrawTextWithBackground(tier.ToString(), topLeft, tierColor, FontAlign.Left, Settings.TextBackgroundColor.Value);
+                        using (Graphics.SetTextScale(Settings.TextScale.Value))
+                        {
+                            var topLeft = new Vector2(itemRect.TopLeft.X + 2, itemRect.TopLeft.Y + 2);
+                            Graphics.DrawTextWithBackground(tier.ToString(), topLeft, tierColor, FontAlign.Left, Settings.TextBackgroundColor.Value);
+                        }
                     }
                 }
             }
